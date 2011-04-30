@@ -1,8 +1,5 @@
 package controller;
 
-import java.io.IOException;
-import java.util.Properties;
-
 import gui.ShutdownGui;
 import hochberger.utilities.eventbus.Event;
 import hochberger.utilities.eventbus.EventBus;
@@ -10,6 +7,10 @@ import hochberger.utilities.eventbus.EventReceiver;
 import hochberger.utilities.eventbus.SimpleEventBus;
 import hochberger.utilities.logging.LogToConsole;
 import hochberger.utilities.properties.LoadProperties;
+
+import java.io.IOException;
+import java.util.Properties;
+
 import controller.event.CancelCountDownEvent;
 import controller.event.CommandExecutionErrorEvent;
 import controller.event.CountDownEvent;
