@@ -3,7 +3,6 @@ package gui;
 import gui.information.InfoScreen;
 import hochberger.utilities.eventbus.Event;
 import hochberger.utilities.eventbus.EventReceiver;
-import hochberger.utilities.generic.listeners.GenericMouseListener;
 import hochberger.utilities.gui.ImageLabel;
 import hochberger.utilities.gui.PanelWrapper;
 import hochberger.utilities.gui.lookandfeel.SetLookAndFeelTo;
@@ -15,6 +14,7 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
@@ -80,7 +80,7 @@ public class ShutdownGui implements EventReceiver {
         panel.setBackground(Color.WHITE);
         panel.add(PanelWrapper.wrapWithBackground(Color.WHITE, this.startButton, this.cancelButton), "skip 1");
         ImageLabel infoImageLabel = new ImageLabel("graphics/info.png");
-        infoImageLabel.addMouseListener(new GenericMouseListener() {
+        infoImageLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(final MouseEvent e) {
                 new InfoScreen(ShutdownGui.this.frame).show();

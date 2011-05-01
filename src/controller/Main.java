@@ -19,7 +19,7 @@ import controller.event.StartCountDownEvent;
 
 public class Main {
 
-    public static String APPLICATION_TITLE = "---";
+    public static String APPLICATION_TITLE;
     public static final EventBus EVENT_BUS = new SimpleEventBus();
 
     public static void main(final String[] args) {
@@ -30,7 +30,7 @@ public class Main {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        APPLICATION_TITLE = properties.getProperty("application.title");
+        APPLICATION_TITLE = properties.getProperty("title");
         LogToConsole.info("Application \"" + APPLICATION_TITLE + "\" started.");
         ShutdownGui gui = new ShutdownGui(APPLICATION_TITLE);
         CountDownTaskManager taskManager = new CountDownTaskManager();
