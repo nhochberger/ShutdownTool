@@ -1,5 +1,6 @@
 package gui;
 
+import edt.EDT;
 import gui.information.InfoScreen;
 import hochberger.utilities.eventbus.Event;
 import hochberger.utilities.eventbus.EventReceiver;
@@ -22,9 +23,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
-
-import com.schneide.framework.gui.swing.EDT;
-
 import controller.Main;
 import controller.event.CancelCountDownEvent;
 import controller.event.CommandExecutionErrorEvent;

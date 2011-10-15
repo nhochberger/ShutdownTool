@@ -9,7 +9,7 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
-import com.schneide.framework.gui.swing.EDT;
+import edt.EDT;
 
 public class SettingsPanel {
 

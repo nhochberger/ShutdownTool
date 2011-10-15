@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 
 import javax.swing.JLabel;
 
-import com.schneide.framework.gui.swing.EDT;
+import edt.EDT;
 
 public class CountDownLabel {
     private final JLabel label;
