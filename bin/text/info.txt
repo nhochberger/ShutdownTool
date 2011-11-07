@@ -1,6 +1,0 @@
-Scheduled Shutdown v0.1
-
-Scheduled Shutdown fährt den PC nach Ablauf der eingestellten Zeit herunter.
-
-Urheber: Nico Hochberger
-Alle Grafiken von http://dryicons.com.
