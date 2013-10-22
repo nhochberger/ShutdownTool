@@ -26,26 +26,26 @@ public class ShutDownController implements EventReceiver {
         }
     }
 
-    protected enum SystemCommands {
+	protected enum SystemCommands {
 
         // SHUTDOWN("shutdown -s -t 1"), ABORT("shutdown -a");
         // for debugging reasons
         SHUTDOWN(""), ABORT("");
 
-        private final String cmdString;
+		private final String cmdString;
 
-        private SystemCommands(final String cmd) {
-            this.cmdString = cmd;
-        }
+		private SystemCommands(final String cmd) {
+			this.cmdString = cmd;
+		}
 
-        public void execute() {
-            Runtime runtime = Runtime.getRuntime();
-            try {
-                runtime.exec(this.cmdString);
-            } catch (IOException e) {
-                LogToConsole.error("Error while executing system command", e);
-                Main.EVENT_BUS.publish(new CommandExecutionErrorEvent());
-            }
-        }
-    }
+		public void execute() {
+			Runtime runtime = Runtime.getRuntime();
+			try {
+				runtime.exec(this.cmdString);
+			} catch (IOException e) {
+				LogToConsole.error("Error while executing system command", e);
+				Main.EVENT_BUS.publish(new CommandExecutionErrorEvent());
+			}
+		}
+	}
 }
