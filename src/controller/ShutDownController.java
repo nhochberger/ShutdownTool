@@ -12,25 +12,24 @@ import controller.event.CountDownFinishedEvent;
 
 public class ShutDownController implements EventReceiver {
 
-    public ShutDownController() {
-        super();
-    }
+	public ShutDownController() {
+		super();
+	}
 
-    @Override
-    public <TYPE extends Event> void receive(final TYPE event) {
-        if (event instanceof CountDownFinishedEvent) {
-            SystemCommands.SHUTDOWN.execute();
-        }
-        if (event instanceof CancelCountDownEvent) {
-            SystemCommands.ABORT.execute();
-        }
-    }
+	@Override
+	public <TYPE extends Event> void receive(final TYPE event) {
+		if (event instanceof CountDownFinishedEvent) {
+			SystemCommands.SHUTDOWN.execute();
+		}
+		if (event instanceof CancelCountDownEvent) {
+			SystemCommands.ABORT.execute();
+		}
+	}
 
 	protected enum SystemCommands {
 
-        // SHUTDOWN("shutdown -s -t 1"), ABORT("shutdown -a");
-        // for debugging reasons
-        SHUTDOWN(""), ABORT("");
+		SHUTDOWN("shutdown -s -t 1"),
+		ABORT("shutdown -a");
 
 		private final String cmdString;
 
@@ -46,6 +45,18 @@ public class ShutDownController implements EventReceiver {
 				LogToConsole.error("Error while executing system command", e);
 				Main.EVENT_BUS.publish(new CommandExecutionErrorEvent());
 			}
+		}
+	}
+
+	public static final class DebugShutdownController extends ShutDownController {
+
+		public DebugShutdownController() {
+			super();
+		}
+
+		@Override
+		public <TYPE extends Event> void receive(TYPE event) {
+			LogToConsole.debug("Received message of type: " + event.getClass());
 		}
 	}
 }
