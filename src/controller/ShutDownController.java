@@ -28,8 +28,7 @@ public class ShutDownController implements EventReceiver {
 
 	protected enum SystemCommands {
 
-		SHUTDOWN("shutdown -s -t 1"),
-		ABORT("shutdown -a");
+		SHUTDOWN("shutdown -s -t 1"), ABORT("shutdown -a");
 
 		private final String cmdString;
 

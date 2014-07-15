@@ -4,12 +4,12 @@ import hochberger.utilities.eventbus.Event;
 
 public class CommandExecutionErrorEvent implements Event {
 
-    public CommandExecutionErrorEvent() {
-        super();
-    }
+	public CommandExecutionErrorEvent() {
+		super();
+	}
 
-    @Override
-    public void performEvent() {
-        // does nothing intentionally
-    }
+	@Override
+	public void performEvent() {
+		// does nothing intentionally
+	}
 }

@@ -4,19 +4,19 @@ import hochberger.utilities.eventbus.Event;
 
 public class CountDownEvent implements Event {
 
-    private final long seconds;
+	private final long seconds;
 
-    public CountDownEvent(final long seconds) {
-        super();
-        this.seconds = seconds;
-    }
+	public CountDownEvent(final long seconds) {
+		super();
+		this.seconds = seconds;
+	}
 
-    @Override
-    public void performEvent() {
-        // do nothing intentionally
-    }
+	@Override
+	public void performEvent() {
+		// do nothing intentionally
+	}
 
-    public long getRemainingSeconds() {
-        return this.seconds;
-    }
+	public long getRemainingSeconds() {
+		return this.seconds;
+	}
 }
